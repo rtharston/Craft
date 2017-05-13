@@ -25,6 +25,7 @@ const int items[] = {
     SUN_FLOWER,
     WHITE_FLOWER,
     BLUE_FLOWER,
+    WATER,
     COLOR_00,
     COLOR_01,
     COLOR_02,
@@ -87,7 +88,7 @@ const int blocks[64][6] = {
     {0, 0, 0, 0, 0, 0}, // 21
     {0, 0, 0, 0, 0, 0}, // 22
     {0, 0, 0, 0, 0, 0}, // 23
-    {0, 0, 0, 0, 0, 0}, // 24
+    {18, 18, 18, 18, 18, 18}, // 24
     {0, 0, 0, 0, 0, 0}, // 25
     {0, 0, 0, 0, 0, 0}, // 26
     {0, 0, 0, 0, 0, 0}, // 27
@@ -164,6 +165,7 @@ int is_obstacle(int w) {
     switch (w) {
         case EMPTY:
         case CLOUD:
+        case WATER:
             return 0;
         default:
             return 1;
@@ -182,6 +184,7 @@ int is_transparent(int w) {
         case EMPTY:
         case GLASS:
         case LEAVES:
+        case WATER:
             return 1;
         default:
             return 0;
@@ -192,6 +195,7 @@ int is_destructable(int w) {
     switch (w) {
         case EMPTY:
         case CLOUD:
+//        case WATER:
             return 0;
         default:
             return 1;
