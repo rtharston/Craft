@@ -2,6 +2,7 @@
 #define _gen_h_
 
 #include <GL/glew.h>
+#include <string.h>
 #include "cube.h"
 #include "struct.h"
 #include "util.h"

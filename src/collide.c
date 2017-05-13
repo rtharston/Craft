@@ -72,10 +72,10 @@
 //
 //int hit_test_face(Player *player, int *x, int *y, int *z, int *face) {
 //    State *s = &player->state;
-//    int w = hit_test(0, s->x, s->y, s->z, s->rx, s->ry, x, y, z);
+//    int w = hit_test(0, s->x, s->y, s->z, s->rx, s->ry, x, y, z, g);
 //    if (is_obstacle(w)) {
 //        int hx, hy, hz;
-//        hit_test(1, s->x, s->y, s->z, s->rx, s->ry, &hx, &hy, &hz);
+//        hit_test(1, s->x, s->y, s->z, s->rx, s->ry, &hx, &hy, &hz, g);
 //        int dx = hx - *x;
 //        int dy = hy - *y;
 //        int dz = hz - *z;
