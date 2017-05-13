@@ -42,10 +42,10 @@ void map_copy(Map *dst, Map *src) {
     memcpy(dst->data, src->data, (dst->mask + 1) * sizeof(MapEntry));
 }
 
-//void map_set_func(int x, int y, int z, int w, void *arg) {
-//    Map *map = (Map *)arg;
-//    map_set(map, x, y, z, w);
-//}
+void map_set_func(int x, int y, int z, int w, void *arg) {
+    Map *map = (Map *)arg;
+    map_set(map, x, y, z, w);
+}
 
 int map_set(Map *map, int x, int y, int z, int w) {
     unsigned int index = hash(x, y, z) & map->mask;

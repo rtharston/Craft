@@ -1,6 +1,6 @@
 #include "player.h"
 
-Player *find_player(int id) {
+Player *find_player(int id, Model *g) {
     for (int i = 0; i < g->player_count; i++) {
         Player *player = g->players + i;
         if (player->id == id) {
@@ -52,8 +52,8 @@ void interpolate_player(Player *player) {
                   0);
 }
 
-void delete_player(int id) {
-    Player *player = find_player(id);
+void delete_player(int pid, Model *g) {
+    Player *player = find_player(pid, g);
     if (!player) {
         return;
     }
@@ -64,7 +64,7 @@ void delete_player(int id) {
     g->player_count = count;
 }
 
-void delete_all_players() {
+void delete_all_players(Model *g) {
     for (int i = 0; i < g->player_count; i++) {
         Player *player = g->players + i;
         del_buffer(player->buffer);
@@ -96,7 +96,7 @@ float player_crosshair_distance(Player *p1, Player *p2) {
     return sqrtf(x * x + y * y + z * z);
 }
 
-Player *player_crosshair(Player *player) {
+Player *player_crosshair(Player *player, Model *g) {
     Player *result = 0;
     float threshold = RADIANS(5);
     float best = 0;
@@ -115,4 +115,41 @@ Player *player_crosshair(Player *player) {
         }
     }
     return result;
+}
+
+void get_sight_vector(float rx, float ry, float *vx, float *vy, float *vz) {
+    float m = cosf(ry);
+    *vx = cosf(rx - RADIANS(90)) * m;
+    *vy = sinf(ry);
+    *vz = sinf(rx - RADIANS(90)) * m;
+}
+
+void get_motion_vector(int flying, int sz, int sx, float rx, float ry,
+                       float *vx, float *vy, float *vz) {
+    *vx = 0; *vy = 0; *vz = 0;
+    if (!sz && !sx) {
+        return;
+    }
+    float strafe = atan2f(sz, sx);
+    if (flying) {
+        float m = cosf(ry);
+        float y = sinf(ry);
+        if (sx) {
+            if (!sz) {
+                y = 0;
+            }
+            m = 1;
+        }
+        if (sz > 0) {
+            y = -y;
+        }
+        *vx = cosf(rx + strafe) * m;
+        *vy = y;
+        *vz = sinf(rx + strafe) * m;
+    }
+    else {
+        *vx = cosf(rx + strafe);
+        *vy = 0;
+        *vz = sinf(rx + strafe);
+    }
 }

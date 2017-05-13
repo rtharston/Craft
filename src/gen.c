@@ -1,6 +1,6 @@
 #include "gen.h"
 
-GLuint gen_crosshair_buffer() {
+GLuint gen_crosshair_buffer(Model *g) {
     int x = g->width / 2;
     int y = g->height / 2;
     int p = 10 * g->scale;

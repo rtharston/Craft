@@ -72,7 +72,6 @@
 #define WORKER_BUSY 1
 #define WORKER_DONE 2
 
-
 #define XZ_SIZE (CHUNK_SIZE * 3 + 2)
 #define XZ_LO (CHUNK_SIZE)
 #define XZ_HI (CHUNK_SIZE * 2 + 1)

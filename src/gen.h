@@ -1,12 +1,13 @@
 #ifndef _gen_h_
 #define _gen_h_
 
-#include "model.h"
 #include <GL/glew.h>
 #include "cube.h"
+#include "struct.h"
 #include "util.h"
 
-GLuint gen_crosshair_buffer();
+
+GLuint gen_crosshair_buffer(Model *g);
 
 GLuint gen_wireframe_buffer(float x, float y, float z, float n);
 

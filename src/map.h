@@ -39,7 +39,7 @@ void map_alloc(Map *map, int dx, int dy, int dz, int mask);
 void map_free(Map *map);
 void map_copy(Map *dst, Map *src);
 void map_grow(Map *map);
-//void map_set_func(int x, int y, int z, int w, void *arg);
+void map_set_func(int x, int y, int z, int w, void *arg);
 int map_set(Map *map, int x, int y, int z, int w);
 int map_get(Map *map, int x, int y, int z);
 
