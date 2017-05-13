@@ -51,6 +51,7 @@ tests/*.app
 tests/*.exe
 tests/accuracy
 tests/clipboard
+tests/cursor
 tests/defaults
 tests/events
 tests/fsaa
@@ -59,6 +60,8 @@ tests/glfwinfo
 tests/iconify
 tests/joysticks
 tests/modes
+tests/monitors
+tests/msaa
 tests/peter
 tests/reopen
 tests/sharing

@@ -61,7 +61,7 @@ const int items[] = {
 
 const int item_count = sizeof(items) / sizeof(int);
 
-const int blocks[256][6] = {
+const int blocks[64][6] = {
     // w => (left, right, top, bottom, front, back) tiles
     {0, 0, 0, 0, 0, 0}, // 0 - empty
     {16, 16, 32, 0, 16, 16}, // 1 - grass
@@ -129,7 +129,7 @@ const int blocks[256][6] = {
     {207, 207, 207, 207, 207, 207}, // 63
 };
 
-const int plants[256] = {
+const int plants[32] = {
     // w => tile
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 0 - 16
     48, // 17 - tall grass

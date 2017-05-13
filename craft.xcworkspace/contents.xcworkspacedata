@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:deps">
+   </FileRef>
+   <FileRef
+      location = "group:shaders">
+   </FileRef>
+   <FileRef
+      location = "group:src">
+   </FileRef>
+   <FileRef
+      location = "group:textures">
+   </FileRef>
+   <FileRef
+      location = "group:LICENSE.md">
+   </FileRef>
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
+      location = "group:CMakeLists.txt">
+   </FileRef>
+   <FileRef
+      location = "group:builder.py">
+   </FileRef>
+   <FileRef
+      location = "group:server.py">
+   </FileRef>
+   <FileRef
+      location = "group:world.py">
+   </FileRef>
+</Workspace>
