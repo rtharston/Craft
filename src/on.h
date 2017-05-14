@@ -13,4 +13,6 @@ void on_right_click(Model *g);
 
 void on_middle_click(Model *g);
 
+void toggle_light(int x, int y, int z, Model *g);
+
 #endif

@@ -7,7 +7,7 @@
 #include "commands.h"
 #include "player.h"
 #include "struct.h"
-#include "others.h"
+#include "handlers.h"
 
 void parse_buffer(char *buffer, Model *g);
 

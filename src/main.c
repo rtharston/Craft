@@ -6,6 +6,7 @@
 #include "parse.h"
 #include "render.h"
 #include "window.h"
+#include "worker.h"
 
 int main(int argc, char **argv) {
     // INITIALIZATION //

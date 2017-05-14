@@ -3,7 +3,8 @@
 
 #include "client.h"
 #include "chunk.h"
-#include "others.h"
+#include "handlers.h"
+#include "set.h"
 #include "struct.h"
 
 void _set_block(int p, int q, int x, int y, int z, int w, int dirty, Model *g);

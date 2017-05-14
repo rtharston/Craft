@@ -45,3 +45,17 @@ void on_middle_click(Model *g) {
         }
     }
 }
+
+void toggle_light(int x, int y, int z, Model *g) {
+    int p = chunked(x);
+    int q = chunked(z);
+    Chunk *chunk = find_chunk(p, q, g);
+    if (chunk) {
+        Map *map = &chunk->lights;
+        int w = map_get(map, x, y, z) ? 0 : 15;
+        map_set(map, x, y, z, w);
+        db_insert_light(p, q, x, y, z, w);
+        client_light(x, y, z, w);
+        dirty_chunk(chunk, g);
+    }
+}

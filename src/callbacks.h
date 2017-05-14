@@ -5,6 +5,7 @@
 #include <GLFW/glfw3.h>
 #include <string.h>
 #include "item.h"
+#include "set.h"
 #include "struct.h"
 #include "on.h"
 
