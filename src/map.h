@@ -1,6 +1,9 @@
 #ifndef _map_h_
 #define _map_h_
 
+#include <stdlib.h>
+#include <string.h>
+
 #define EMPTY_ENTRY(entry) ((entry)->value == 0)
 
 #define MAP_FOR_EACH(map, ex, ey, ez, ew) \

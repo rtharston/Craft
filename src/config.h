@@ -1,6 +1,9 @@
 #ifndef _config_h_
 #define _config_h_
 
+// server client
+#define DEFAULT_PORT 4080
+
 // app parameters
 #define DEBUG 0
 #define FULLSCREEN 0

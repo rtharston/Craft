@@ -2,6 +2,10 @@
 #include <GLFW/glfw3.h>
 #include <curl/curl.h>
 #include "callbacks.h"
+#include "commands.h"
+#include "parse.h"
+#include "render.h"
+#include "window.h"
 
 int main(int argc, char **argv) {
     // INITIALIZATION //

@@ -1,7 +1,9 @@
 #ifndef _client_h_
 #define _client_h_
 
-#define DEFAULT_PORT 4080
+#include "auth.h"
+#include "db.h"
+#include "config.h"
 
 void client_enable();
 void client_disable();
@@ -19,5 +21,6 @@ void client_block(int x, int y, int z, int w);
 void client_light(int x, int y, int z, int w);
 void client_sign(int x, int y, int z, int face, const char *text);
 void client_talk(const char *text);
+void login();
 
 #endif

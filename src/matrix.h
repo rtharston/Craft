@@ -1,6 +1,10 @@
 #ifndef _matrix_h_
 #define _matrix_h_
 
+#include <math.h>
+#include "config.h"
+#include "util.h" 
+
 void normalize(float *x, float *y, float *z);
 void mat_identity(float *matrix);
 void mat_translate(float *matrix, float dx, float dy, float dz);

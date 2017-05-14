@@ -223,3 +223,22 @@ int wrap(const char *input, int max_width, char *output, int max_length) {
     free(text);
     return line_number;
 }
+
+void reset_model(Model *g) {
+    memset(g->chunks, 0, sizeof(Chunk) * MAX_CHUNKS);
+    g->chunk_count = 0;
+    memset(g->players, 0, sizeof(Player) * MAX_PLAYERS);
+    g->player_count = 0;
+    g->observe1 = 0;
+    g->observe2 = 0;
+    g->flying = 0;
+    g->item_index = 0;
+    memset(g->typing_buffer, 0, sizeof(char) * MAX_TEXT_LENGTH);
+    g->typing = 0;
+    memset(g->messages, 0, sizeof(char) * MAX_MESSAGES * MAX_TEXT_LENGTH);
+    g->message_index = 0;
+    g->day_length = DAY_LENGTH;
+    glfwSetTime(g->day_length / 3.0);
+    g->time_changed = 1;
+}
+
